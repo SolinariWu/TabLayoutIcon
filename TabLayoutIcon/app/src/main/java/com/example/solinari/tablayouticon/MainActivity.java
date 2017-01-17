@@ -5,63 +5,27 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager myViewPager;
     private TabLayout tabLayout;
-    private int[] IconResID = {R.drawable.tab_one_selected,R.drawable.tab_two,R.drawable.tab_three,
-            R.drawable.tab_one, R.drawable.tab_two_selected,R.drawable.tab_three_selected};
+    private int[] IconResID = {R.drawable.selector_one,R.drawable.selector_two,R.drawable.selector_three};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myViewPager = (ViewPager) findViewById(R.id.myViewPager);
-
         tabLayout = (TabLayout) findViewById(R.id.TabLayout);
         setViewPager();;
         tabLayout.setupWithViewPager(myViewPager);
         setTabLayoutIcon();
     }
     public void setTabLayoutIcon(){
-        for(int i =0; i < 3;i++){
-
+        for(int i =0; i < IconResID.length;i++){
             tabLayout.getTabAt(i).setIcon(IconResID[i]);
         }
-      tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-          @Override
-          public void onTabSelected(TabLayout.Tab tab) {
-              switch(tab.getPosition()){
-                  case 0:
-                      tabLayout.getTabAt(0).setIcon(IconResID[0]);
-                      tabLayout.getTabAt(1).setIcon(IconResID[1]);
-                      tabLayout.getTabAt(2).setIcon(IconResID[2]);
-                      break;
-                  case 1:
-                      tabLayout.getTabAt(0).setIcon(IconResID[3]);
-                      tabLayout.getTabAt(1).setIcon(IconResID[4]);
-                      tabLayout.getTabAt(2).setIcon(IconResID[2]);
-                      break;
-                  case 2:
-                      tabLayout.getTabAt(0).setIcon(IconResID[3]);
-                      tabLayout.getTabAt(1).setIcon(IconResID[1]);
-                      tabLayout.getTabAt(2).setIcon(IconResID[5]);
-                      break;
-              }
-          }
-
-          @Override
-          public void onTabUnselected(TabLayout.Tab tab) {
-
-          }
-
-          @Override
-          public void onTabReselected(TabLayout.Tab tab) {
-
-          }
-      });
 
     }
     private void setViewPager(){

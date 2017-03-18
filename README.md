@@ -1,6 +1,6 @@
 # TabLayoutIcon
 **Description**:TabLayout Icon show different image when Page is selected.
 
-![image] (https://github.com/SolinariWu/TabLayoutIcon/blob/master/TabLayoutIcon.gif)
+[[https://github.com/SolinariWu/TabLayoutIcon/blob/master/TabLayoutIcon.gif|alt=octocat]]
 
 **Blog Article(Chinese)**:https://solinariwu.blogspot.tw/2016/12/android-tablayouviewpagericon.html
